@@ -11,10 +11,9 @@ import javax.security.auth.login.LoginException;
 @SpringBootApplication
 public class Main {
 
-
     public static void main(String[] args) throws LoginException {
         JDA jdaBuilder = new JDABuilder(AuthKeys.DiscordAuth()).build();
         SpringApplication.run(com.DiscordHelper.DiscordHelper.DiscordHelperApplication.class, args);
-    }
 
+    }
 }

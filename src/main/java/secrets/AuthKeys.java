@@ -4,11 +4,11 @@ public class AuthKeys {
     private static String key;
 
     public static String DiscordAuth() {
-        return AuthKeys.key;
+        return setDiscordAuth();
     }
 
     private static String setDiscordAuth() {
-        AuthKeys.key = "key";
+        AuthKeys.key = "secret";
         return AuthKeys.key;
     }
 }
