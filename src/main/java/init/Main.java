@@ -1,19 +1,23 @@
 package init;
 
+import init.events.CommandListener;
+import init.events.EventActions;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import secrets.AuthKeys;
 
 import javax.security.auth.login.LoginException;
 
-@SpringBootApplication
+
 public class Main {
 
     public static void main(String[] args) throws LoginException {
-        JDA jdaBuilder = new JDABuilder(AuthKeys.DiscordAuth()).build();
-        SpringApplication.run(com.DiscordHelper.DiscordHelper.DiscordHelperApplication.class, args);
+        JDA initGameactivitybot = new JDABuilder(AuthKeys.getGameactivitybotKey()).build();
 
+        initGameactivitybot.addEventListener(new EventActions());
+    }
+
+    private static void initMassageEvents(JDA initBot) {
+        initBot.addEventListener(new EventActions());
     }
 }
